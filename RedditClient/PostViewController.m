@@ -48,6 +48,7 @@
         for (NSDictionary *jsonPost in jsonPosts) {
             NSDictionary *jsonData = jsonPost[@"data"];
             Post *post = [[Post alloc] init];
+            post.ID = jsonData[@"id"];
             post.title = jsonData[@"title"];
             post.thumbnail = jsonData[@"thumbnail"];
             post.upvotes = [jsonData[@"ups"] integerValue];

@@ -42,6 +42,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="skf-nP-Aaq" kind="show" id="8J2-qc-pGe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -70,6 +73,63 @@
             </objects>
             <point key="canvasLocation" x="1492" y="505"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="MO5-oY-XJz">
+            <objects>
+                <viewController id="uet-Q0-gh2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vgP-sX-WCa"/>
+                        <viewControllerLayoutGuide type="bottom" id="N0o-wD-5FY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XOA-c5-1Hf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="reddit-tab-bar" id="NoP-b0-zTi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pS7-vU-spA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3144" y="836"/>
+        </scene>
+        <!--Link-->
+        <scene sceneID="trd-ll-rca">
+            <objects>
+                <viewController id="EZB-fu-fL0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tbV-6g-Oso"/>
+                        <viewControllerLayoutGuide type="bottom" id="DKa-0c-tsx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oex-0K-lll">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Link" image="link" id="Zhy-9I-8Fp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="da8-oH-cfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3144" y="174"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="JPn-Li-9iy">
+            <objects>
+                <tabBarController id="skf-nP-Aaq" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eXN-xt-wY0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="EZB-fu-fL0" kind="relationship" relationship="viewControllers" id="Ulb-lo-ydy"/>
+                        <segue destination="uet-Q0-gh2" kind="relationship" relationship="viewControllers" id="udC-xI-fQJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rec-6g-1LY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="504"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="UKK-Wz-JLz">
             <objects>
@@ -89,4 +149,8 @@
             <point key="canvasLocation" x="680" y="505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="link" width="25" height="25"/>
+        <image name="reddit-tab-bar" width="25" height="25"/>
+    </resources>
 </document>
