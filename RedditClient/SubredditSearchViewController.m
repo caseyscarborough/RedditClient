@@ -10,7 +10,7 @@
 
 @interface SubredditSearchViewController () {
 }
-- (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit;
+- (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit after:(NSString *)postId;
 @property (nonatomic) CGRect originalFrame;
 @end
 
@@ -18,11 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.posts = [[NSMutableArray alloc] init];
     self.tableView.hidden = YES;
     self.activityIndicator.hidden = YES;
     self.searchField.delegate = self;
     self.originalFrame = self.tabBarController.tabBar.frame;
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [self retrieveSubredditPosts:self forSubreddit:self.currentSubreddit after:((Post *)[self.posts objectAtIndex:(self.posts.count - 1)]).ID];
+    }];
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [self retrieveSubredditPosts:self forSubreddit:self.currentSubreddit after:nil];
+    }];
 
 }
 
@@ -54,7 +62,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.searchField) {
         [self.searchField resignFirstResponder];
-        [self retrieveSubredditPosts:self forSubreddit:self.searchField.text];
+        [self retrieveSubredditPosts:self forSubreddit:self.searchField.text after:nil];
     }
     return YES;
 }
@@ -80,28 +88,32 @@
     return cell;
 }
 
-- (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit {
+- (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit after:(NSString *)postId {
     if ([subreddit isEqualToString:@""]) {
         return;
     }
     self.activityIndicator.hidden = NO;
-    self.tableView.hidden = YES;
     self.errorLabel.hidden = YES;
     NSString *apiEndpoint = [NSString stringWithFormat:@"http://www.reddit.com/r/%@.json", subreddit];
+    if (postId) {
+        apiEndpoint = [NSString stringWithFormat:@"%@?count=25&after=%@", apiEndpoint, postId];
+    }
     
+    NSMutableArray *newPosts = [[NSMutableArray alloc] init];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET: apiEndpoint parameters: nil success: ^(AFHTTPRequestOperation *operation, id responseObject){
-        self.posts = [[NSMutableArray alloc] init];
+        
         NSArray *jsonPosts = [((NSDictionary *)[responseObject objectForKey:@"data"]) objectForKey:@"children"];
         if (jsonPosts.count == 0) {
             self.errorLabel.text = @"There are no posts in this subreddit.";
             self.errorLabel.hidden = NO;
+            self.tableView.hidden = YES;
         } else {
             for (NSDictionary *jsonPost in jsonPosts) {
                 NSDictionary *jsonData = jsonPost[@"data"];
                 Post *post = [[Post alloc] init];
-                post.ID = jsonData[@"id"];
+                post.ID = jsonData[@"name"];
                 post.title = [jsonData[@"title"] stringByDecodingHTMLEntities];
                 post.thumbnail = jsonData[@"thumbnail"];
                 post.upvotes = [jsonData[@"ups"] integerValue];
@@ -113,14 +125,32 @@
                 if (!([jsonData objectForKey:@"selftext"] == (id)[NSNull null])) {
                     post.selfText = [jsonData objectForKey:@"selftext"];
                 }
-                [self.posts addObject:post];
+                [newPosts addObject:post];
             }
+            
+            if (postId) {
+                // Continuous scrolling
+                NSMutableArray *paths = [[NSMutableArray alloc] init];
+                int i = (int)self.posts.count;
+                [self.posts addObjectsFromArray:newPosts];
+                for (Post *post in newPosts) {
+                    [paths addObject:[NSIndexPath indexPathForRow:i++ inSection:0]];
+                }
+                [self.tableView beginUpdates];
+                [self.tableView insertRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationFade];
+                [self.tableView endUpdates];
+                [self.tableView.infiniteScrollingView stopAnimating];
+            } else {
+                self.posts = newPosts;
+                [self.tableView.pullToRefreshView stopAnimating];
+                [self.tableView reloadData];
+            }
+            self.activityIndicator.hidden = YES;
             self.tableView.hidden = NO;
-            [self.tableView reloadData];
         }
-        self.activityIndicator.hidden = YES;
         self.currentSubreddit = subreddit;
         self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"/r/%@", subreddit];
+        self.activityIndicator.hidden = YES;
     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         self.tableView.hidden = YES;

@@ -13,6 +13,7 @@
 #import "NSString+HTML.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "PostTabBarViewController.h"
+#import "SVPullToRefresh.h"
 
 @interface SubredditSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
