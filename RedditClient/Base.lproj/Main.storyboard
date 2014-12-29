@@ -231,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9V4-Ya-Ce1">
-                                <rect key="frame" x="0.0" y="110" width="600" height="444"/>
+                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subredditPostCell" textLabel="6bL-1m-QGg" detailTextLabel="Hiz-Zn-cnK" style="IBUITableViewCellStyleSubtitle" id="Xk3-sS-0IP" customClass="CustomUITableViewCell">
@@ -266,18 +266,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="top" secondItem="Kqd-a5-OYa" secondAttribute="bottom" constant="8" symbolic="YES" id="3fh-Bt-1L4"/>
                             <constraint firstItem="Zmr-n8-Mfy" firstAttribute="leading" secondItem="Kqd-a5-OYa" secondAttribute="leading" id="86P-N2-aY6"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leading" id="9Zz-yV-3B8"/>
                             <constraint firstItem="rxh-N1-4DX" firstAttribute="centerY" secondItem="b6t-4S-kjd" secondAttribute="centerY" id="9dk-6e-eIt"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leading" id="DMZ-Bb-UQD"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="centerX" secondItem="b6t-4S-kjd" secondAttribute="centerX" id="F0B-Ma-mY8"/>
                             <constraint firstItem="Zmr-n8-Mfy" firstAttribute="centerX" secondItem="rxh-N1-4DX" secondAttribute="centerX" id="GHh-5y-DTe"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="top" secondItem="Kqd-a5-OYa" secondAttribute="bottom" constant="8" symbolic="YES" id="HQO-5F-Ycy"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leadingMargin" constant="-7" id="Lcg-Qq-XdF"/>
                             <constraint firstItem="oFn-en-O1v" firstAttribute="top" secondItem="Zmr-n8-Mfy" secondAttribute="bottom" constant="95" id="VWh-9n-K2k"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="centerX" secondItem="Zmr-n8-Mfy" secondAttribute="centerX" id="bbS-ry-eLg"/>
                             <constraint firstItem="Zmr-n8-Mfy" firstAttribute="top" secondItem="Kqd-a5-OYa" secondAttribute="bottom" constant="59" id="bvc-c3-UE9"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="centerX" secondItem="rxh-N1-4DX" secondAttribute="centerX" id="ccg-N0-YRz"/>
+                            <constraint firstAttribute="bottom" secondItem="9V4-Ya-Ce1" secondAttribute="bottom" id="rY5-W3-98o"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="top" secondItem="DKK-EW-P1B" secondAttribute="bottom" constant="8" symbolic="YES" id="sLC-fY-dO3"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="9V4-Ya-Ce1" secondAttribute="bottom" constant="46" id="yxx-vQ-B8t"/>
                             <constraint firstItem="Zmr-n8-Mfy" firstAttribute="trailing" secondItem="Kqd-a5-OYa" secondAttribute="trailing" id="z1c-Ag-Zfl"/>
                         </constraints>
                     </view>

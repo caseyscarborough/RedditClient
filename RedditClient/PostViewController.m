@@ -38,10 +38,13 @@
     // Set tab bar to have white text on dark background
     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(42/255.0) green:(68/255.0) blue:(94/255.0) alpha:1]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    UITabBar *tb = self.tabBarController.tabBar;
     
+    NSLog(@"%f - %f", tb.frame.origin.y, tb.frame.size.height);
+    self.originalFrame = CGRectMake(tb.frame.origin.x, tb.frame.origin.y - tb.frame.size.height - 15, tb.frame.size.width, tb.frame.size.height);
+
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.hidden = YES;
-    
 
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
@@ -49,7 +52,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.originalFrame = self.tabBarController.tabBar.frame;
     self.navigationController.navigationBar.topItem.title = @"Front Page";
 }
 
