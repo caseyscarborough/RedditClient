@@ -26,6 +26,9 @@
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    self.tableView.hidden = YES;
+    [self.activityIndicator startAnimating];
+    [self.view addSubview:self.activityIndicator];
     [self retrieveFrontPagePosts];
 }
 
@@ -52,6 +55,7 @@
             [self.posts addObject:post];
         }
         [self.tableView reloadData];
+        self.activityIndicator.hidden = YES;
         self.tableView.hidden = NO;
     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
