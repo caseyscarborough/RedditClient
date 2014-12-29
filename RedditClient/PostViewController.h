@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomUITableViewCell.h"
 #import "Post.h"
 #import "AFNetworking.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

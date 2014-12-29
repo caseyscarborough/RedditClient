@@ -22,8 +22,10 @@
     [super viewDidLoad];
     self.title = @"Front Page";
     // Reddit navbar color
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(212/255.0) green:(227/255.0) blue:(248/255.0) alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(82/255.0) green:(138/255.0) blue:(220/255.0) alpha:1];
     self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     [self retrieveFrontPagePosts];
 }
 
@@ -42,9 +44,9 @@
         NSArray *jsonPosts = [((NSDictionary *)[responseObject objectForKey:@"data"]) objectForKey:@"children"];
         for (NSDictionary *jsonPost in jsonPosts) {
             NSDictionary *jsonData = jsonPost[@"data"];
-            NSLog(@"%@", jsonData[@"title"]);
             Post *post = [[Post alloc] init];
             post.title = jsonData[@"title"];
+            post.thumbnail = jsonData[@"thumbnail"];
             post.upvotes = [jsonData[@"ups"] integerValue];
             post.comments = [jsonData[@"num_comments"] integerValue];
             [self.posts addObject:post];
@@ -67,10 +69,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"post" forIndexPath:indexPath];
+    CustomUITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"post" forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[CustomUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"post"];
+    }
     Post *post = [self.posts objectAtIndex:indexPath.row];
     cell.textLabel.text = post.title;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd upvotes - %zd comments", post.upvotes, post.comments];
+    if (![post.thumbnail isEqualToString:@""]) {
+        CGSize itemSize = CGSizeMake(40, 40);
+        UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);
+        [cell.imageView sd_setImageWithURL:post.thumbnailUrl placeholderImage:[UIImage imageNamed:@"reddit"]];
+    }
     return cell;
 }
 

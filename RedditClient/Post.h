@@ -20,4 +20,5 @@
 @property (assign, nonatomic) NSInteger comments;
 - (NSURL *) url;
 - (NSURL *) permalinkUrl;
+- (NSURL *) thumbnailUrl;
 @end

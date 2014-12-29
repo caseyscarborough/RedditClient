@@ -9,11 +9,15 @@
 #import "Post.h"
 
 @implementation Post
-- (NSURL *) url {
+- (NSURL *)url {
     return [NSURL URLWithString:self.urlString];
 }
 
-- (NSURL *) permalinkUrl {
+- (NSURL *)permalinkUrl {
     return [NSURL URLWithString:self.permalink];
+}
+
+- (NSURL *)thumbnailUrl {
+    return [NSURL URLWithString:self.thumbnail];
 }
 @end
