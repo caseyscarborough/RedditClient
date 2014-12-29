@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PostViewController.h
 //  RedditClient
 //
 //  Created by Casey Scarborough on 12/29/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
-
