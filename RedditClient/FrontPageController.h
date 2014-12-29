@@ -15,7 +15,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SVPullToRefresh.h"
 
-@interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FrontPageController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSMutableArray *posts;

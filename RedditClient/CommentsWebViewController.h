@@ -11,7 +11,7 @@
 #import "NSString+HTML.h"
 #import "AFNetworking.h"
 
-@interface PostCommentsViewController : UIViewController <UIWebViewDelegate>
+@interface CommentsWebViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) Post *currentPost;
 @end

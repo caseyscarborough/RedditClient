@@ -15,12 +15,12 @@
 		C9A79CFA1A518D6C0091A36B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9A79CF91A518D6C0091A36B /* Images.xcassets */; };
 		C9A79CFD1A518D6C0091A36B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A79CFB1A518D6C0091A36B /* LaunchScreen.xib */; };
 		C9A79D091A518D6C0091A36B /* RedditClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D081A518D6C0091A36B /* RedditClientTests.m */; };
-		C9A79D141A518F520091A36B /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D131A518F520091A36B /* PostViewController.m */; };
+		C9A79D141A518F520091A36B /* FrontPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D131A518F520091A36B /* FrontPageController.m */; };
 		C9A79D171A5193850091A36B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D161A5193850091A36B /* Post.m */; };
 		C9A79D1A1A51A0380091A36B /* CustomUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D191A51A0380091A36B /* CustomUITableViewCell.m */; };
-		C9A79D1D1A51AA8E0091A36B /* PostWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */; };
+		C9A79D1D1A51AA8E0091A36B /* LinkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D1C1A51AA8E0091A36B /* LinkWebViewController.m */; };
 		C9A79D201A51ACAF0091A36B /* PostTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */; };
-		C9D19BCA1A51BC5900365F61 /* PostCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */; };
+		C9D19BCA1A51BC5900365F61 /* CommentsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D19BC91A51BC5900365F61 /* CommentsWebViewController.m */; };
 		FB0103BDCD0D667EBC9B3D6A /* libPods-RedditClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */; };
 /* End PBXBuildFile section */
 
@@ -51,18 +51,18 @@
 		C9A79D021A518D6C0091A36B /* RedditClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A79D071A518D6C0091A36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A79D081A518D6C0091A36B /* RedditClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedditClientTests.m; sourceTree = "<group>"; };
-		C9A79D121A518F520091A36B /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
-		C9A79D131A518F520091A36B /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		C9A79D121A518F520091A36B /* FrontPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontPageController.h; sourceTree = "<group>"; };
+		C9A79D131A518F520091A36B /* FrontPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrontPageController.m; sourceTree = "<group>"; };
 		C9A79D151A5193850091A36B /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		C9A79D161A5193850091A36B /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		C9A79D181A51A0380091A36B /* CustomUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUITableViewCell.h; sourceTree = "<group>"; };
 		C9A79D191A51A0380091A36B /* CustomUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUITableViewCell.m; sourceTree = "<group>"; };
-		C9A79D1B1A51AA8E0091A36B /* PostWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostWebViewController.h; sourceTree = "<group>"; };
-		C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostWebViewController.m; sourceTree = "<group>"; };
+		C9A79D1B1A51AA8E0091A36B /* LinkWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkWebViewController.h; sourceTree = "<group>"; };
+		C9A79D1C1A51AA8E0091A36B /* LinkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkWebViewController.m; sourceTree = "<group>"; };
 		C9A79D1E1A51ACAF0091A36B /* PostTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTabBarViewController.h; sourceTree = "<group>"; };
 		C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTabBarViewController.m; sourceTree = "<group>"; };
-		C9D19BC81A51BC5900365F61 /* PostCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCommentsViewController.h; sourceTree = "<group>"; };
-		C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCommentsViewController.m; sourceTree = "<group>"; };
+		C9D19BC81A51BC5900365F61 /* CommentsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsWebViewController.h; sourceTree = "<group>"; };
+		C9D19BC91A51BC5900365F61 /* CommentsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsWebViewController.m; sourceTree = "<group>"; };
 		E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RedditClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,18 +132,18 @@
 				C9A79CF91A518D6C0091A36B /* Images.xcassets */,
 				C9A79CFB1A518D6C0091A36B /* LaunchScreen.xib */,
 				C9A79CEC1A518D6C0091A36B /* Supporting Files */,
-				C9A79D121A518F520091A36B /* PostViewController.h */,
-				C9A79D131A518F520091A36B /* PostViewController.m */,
+				C9A79D121A518F520091A36B /* FrontPageController.h */,
+				C9A79D131A518F520091A36B /* FrontPageController.m */,
 				C9A79D151A5193850091A36B /* Post.h */,
 				C9A79D161A5193850091A36B /* Post.m */,
 				C9A79D181A51A0380091A36B /* CustomUITableViewCell.h */,
 				C9A79D191A51A0380091A36B /* CustomUITableViewCell.m */,
-				C9A79D1B1A51AA8E0091A36B /* PostWebViewController.h */,
-				C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */,
+				C9A79D1B1A51AA8E0091A36B /* LinkWebViewController.h */,
+				C9A79D1C1A51AA8E0091A36B /* LinkWebViewController.m */,
 				C9A79D1E1A51ACAF0091A36B /* PostTabBarViewController.h */,
 				C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */,
-				C9D19BC81A51BC5900365F61 /* PostCommentsViewController.h */,
-				C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */,
+				C9D19BC81A51BC5900365F61 /* CommentsWebViewController.h */,
+				C9D19BC91A51BC5900365F61 /* CommentsWebViewController.m */,
 				C93ADD9D1A51D8CE00EB7F5C /* SubredditSearchViewController.h */,
 				C93ADD9E1A51D8CE00EB7F5C /* SubredditSearchViewController.m */,
 			);
@@ -313,14 +313,14 @@
 			files = (
 				C9A79CF21A518D6C0091A36B /* AppDelegate.m in Sources */,
 				C9A79D1A1A51A0380091A36B /* CustomUITableViewCell.m in Sources */,
-				C9D19BCA1A51BC5900365F61 /* PostCommentsViewController.m in Sources */,
+				C9D19BCA1A51BC5900365F61 /* CommentsWebViewController.m in Sources */,
 				C93ADD9F1A51D8CE00EB7F5C /* SubredditSearchViewController.m in Sources */,
 				C9A79CEF1A518D6C0091A36B /* main.m in Sources */,
-				C9A79D141A518F520091A36B /* PostViewController.m in Sources */,
+				C9A79D141A518F520091A36B /* FrontPageController.m in Sources */,
 				C9A79D171A5193850091A36B /* Post.m in Sources */,
 				C93ADD9C1A51CFDC00EB7F5C /* README.md in Sources */,
 				C9A79D201A51ACAF0091A36B /* PostTabBarViewController.m in Sources */,
-				C9A79D1D1A51AA8E0091A36B /* PostWebViewController.m in Sources */,
+				C9A79D1D1A51AA8E0091A36B /* LinkWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

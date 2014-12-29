@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 
-@interface PostWebViewController : UIViewController <UIWebViewDelegate>
+@interface LinkWebViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) Post *currentPost;
 @end

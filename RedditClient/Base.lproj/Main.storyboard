@@ -8,7 +8,7 @@
         <!--Front Page-->
         <scene sceneID="zkw-di-l8i">
             <objects>
-                <viewController id="tAr-xR-tpa" customClass="PostViewController" sceneMemberID="viewController">
+                <viewController id="tAr-xR-tpa" customClass="FrontPageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lte-qh-fqr"/>
                         <viewControllerLayoutGuide type="bottom" id="Vfd-Om-0Tb"/>
@@ -78,7 +78,7 @@
         <!--Comments-->
         <scene sceneID="MO5-oY-XJz">
             <objects>
-                <viewController id="uet-Q0-gh2" customClass="PostCommentsViewController" sceneMemberID="viewController">
+                <viewController id="uet-Q0-gh2" customClass="CommentsWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vgP-sX-WCa"/>
                         <viewControllerLayoutGuide type="bottom" id="N0o-wD-5FY"/>
@@ -112,7 +112,7 @@
         <!--Link-->
         <scene sceneID="trd-ll-rca">
             <objects>
-                <viewController id="EZB-fu-fL0" customClass="PostWebViewController" sceneMemberID="viewController">
+                <viewController id="EZB-fu-fL0" customClass="LinkWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tbV-6g-Oso"/>
                         <viewControllerLayoutGuide type="bottom" id="DKa-0c-tsx"/>

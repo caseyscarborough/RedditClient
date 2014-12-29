@@ -1,33 +1,23 @@
 //
-//  PostWebViewController.m
+//  PostCommentsViewController.m
 //  RedditClient
 //
 //  Created by Casey Scarborough on 12/29/14.
 //  Copyright (c) 2014 Casey Scarborough. All rights reserved.
 //
 
-#import "PostWebViewController.h"
+#import "CommentsWebViewController.h"
 
-@interface PostWebViewController ()
-
+@interface CommentsWebViewController ()
 @end
 
-@implementation PostWebViewController
+@implementation CommentsWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
-
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    if (self.currentPost) {
-        if (self.currentPost.isSelf) {
-            self.tabBarController.tabBar.hidden = YES;
-        }
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.currentPost.url];
-        [self.webView loadRequest:urlRequest];
-    }
-    self.webView.delegate = self;
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.currentPost.permalinkUrl];
+    [self.webView loadRequest:urlRequest];
 }
 
 - (void)didReceiveMemoryWarning {

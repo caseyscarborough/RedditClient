@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Casey Scarborough. All rights reserved.
 //
 
-#import "PostViewController.h"
+#import "FrontPageController.h"
 
-@interface PostViewController ()
+@interface FrontPageController ()
 - (void)retrieveFrontPagePosts:(id)sender after:(NSString *)postId;
 @property (nonatomic) CGRect originalFrame;
 @end
 
-@implementation PostViewController
+@implementation FrontPageController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
