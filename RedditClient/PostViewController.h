@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "NSString+HTML.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SVPullToRefresh.h"
 
 @interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -4,6 +4,7 @@ target 'RedditClient' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'MWFeedParser/NSString+HTML'
+  pod 'SVPullToRefresh'
 end
 
 target 'RedditClientTests' do
