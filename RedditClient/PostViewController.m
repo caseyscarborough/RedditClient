@@ -30,9 +30,14 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(42/255.0) green:(68/255.0) blue:(94/255.0) alpha:1];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
     // Set status bar to have white text
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    // Set tab bar to have white text on dark background
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(42/255.0) green:(68/255.0) blue:(94/255.0) alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.hidden = YES;

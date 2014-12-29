@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W7G-vZ-kY0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Post View Controller-->
+        <!--Front Page-->
         <scene sceneID="zkw-di-l8i">
             <objects>
                 <viewController id="tAr-xR-tpa" customClass="PostViewController" sceneMemberID="viewController">
@@ -20,7 +21,7 @@
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-P5-rdO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="post" textLabel="hta-bm-Eyp" detailTextLabel="vPw-Uk-zUQ" style="IBUITableViewCellStyleSubtitle" id="4DD-MB-Cgd" customClass="CustomUITableViewCell">
@@ -55,14 +56,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerY" secondItem="XBi-AB-WQR" secondAttribute="centerY" id="2cA-UO-aoo"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="bottom" secondItem="Vfd-Om-0Tb" secondAttribute="top" id="5lU-9V-Ekt"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="bottom" secondItem="Vfd-Om-0Tb" secondAttribute="top" id="5IV-lo-5D7"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="leading" secondItem="1tG-Tw-HgB" secondAttribute="leading" id="8a9-M5-f2X"/>
                             <constraint firstItem="XBi-AB-WQR" firstAttribute="centerX" secondItem="1tG-Tw-HgB" secondAttribute="centerX" id="D1G-Yf-hsS"/>
                             <constraint firstItem="XBi-AB-WQR" firstAttribute="centerY" secondItem="1tG-Tw-HgB" secondAttribute="centerY" id="WjP-lz-zUw"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerX" secondItem="XBi-AB-WQR" secondAttribute="centerX" id="XPM-Vq-QuT"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="leading" secondItem="1tG-Tw-HgB" secondAttribute="leading" id="q5Q-oG-wiY"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerX" secondItem="XBi-AB-WQR" secondAttribute="centerX" id="ZGR-My-0ka"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="top" secondItem="1tG-Tw-HgB" secondAttribute="top" id="mQa-h9-yaF"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Front Page" image="reddit-tab-bar" id="U58-CV-5w5"/>
                     <navigationItem key="navigationItem" id="EPr-Re-iO8"/>
                     <connections>
                         <outlet property="activityIndicator" destination="XBi-AB-WQR" id="Jlc-Ox-hU7"/>
@@ -71,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDr-aP-kXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="505"/>
+            <point key="canvasLocation" x="2304" y="505"/>
         </scene>
         <!--Comments-->
         <scene sceneID="MO5-oY-XJz">
@@ -105,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pS7-vU-spA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144" y="836"/>
+            <point key="canvasLocation" x="3136" y="1232"/>
         </scene>
         <!--Link-->
         <scene sceneID="trd-ll-rca">
@@ -139,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da8-oH-cfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144" y="190"/>
+            <point key="canvasLocation" x="3870" y="505"/>
         </scene>
         <!--Post Tab Bar View Controller-->
         <scene sceneID="JPn-Li-9iy">
@@ -158,7 +160,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rec-6g-1LY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="504"/>
+            <point key="canvasLocation" x="3136" y="504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UKK-Wz-JLz">
@@ -171,17 +173,144 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tAr-xR-tpa" kind="relationship" relationship="rootViewController" id="XNc-SE-7Yr"/>
+                        <segue destination="sRC-zh-Vla" kind="relationship" relationship="rootViewController" id="tPE-nF-dHM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2T-x9-wPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="680" y="505"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Mib-1t-X7n">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sRC-zh-Vla" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="w2N-Gj-iGW"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iZB-hv-5l0">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tAr-xR-tpa" kind="relationship" relationship="viewControllers" id="Wvj-aX-oAD"/>
+                        <segue destination="ExF-hW-jAp" kind="relationship" relationship="viewControllers" id="D2h-UW-fsO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="req-6K-7KI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="505"/>
+        </scene>
+        <!--Subreddit Search View Controller-->
+        <scene sceneID="x9p-0f-0n5">
+            <objects>
+                <viewController id="ExF-hW-jAp" customClass="SubredditSearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DKK-EW-P1B"/>
+                        <viewControllerLayoutGuide type="bottom" id="oFn-en-O1v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b6t-4S-kjd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfd-Qc-Uij">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Item" id="Pac-IX-DRP"/>
+                                </items>
+                            </tabBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter subreddit... i.e. funny, aww, jokes" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-a5-OYa">
+                                <rect key="frame" x="9" y="72" width="582" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FAe-Rj-fZu"/>
+                                </constraints>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="go"/>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rxh-N1-4DX">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmr-n8-Mfy">
+                                <rect key="frame" x="9" y="110" width="600" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4aU-nX-eIA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.62880760729999996" green="0.0" blue="0.10123690420000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9V4-Ya-Ce1">
+                                <rect key="frame" x="0.0" y="110" width="600" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subredditPostCell" textLabel="6bL-1m-QGg" detailTextLabel="Hiz-Zn-cnK" style="IBUITableViewCellStyleSubtitle" id="Xk3-sS-0IP" customClass="CustomUITableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xk3-sS-0IP" id="ieZ-qH-gvC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6bL-1m-QGg">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hiz-Zn-cnK">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="skf-nP-Aaq" kind="show" identifier="showLink" id="KMe-AG-52r"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ExF-hW-jAp" id="2It-r5-0nk"/>
+                                    <outlet property="delegate" destination="ExF-hW-jAp" id="Poc-2q-UUi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="Tfd-Qc-Uij" secondAttribute="leading" id="2hi-zz-Nv5"/>
+                            <constraint firstItem="rxh-N1-4DX" firstAttribute="centerY" secondItem="b6t-4S-kjd" secondAttribute="centerY" id="9dk-6e-eIt"/>
+                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="leading" secondItem="Zmr-n8-Mfy" secondAttribute="leading" id="Ac3-XB-vAX"/>
+                            <constraint firstItem="rxh-N1-4DX" firstAttribute="centerX" secondItem="Tfd-Qc-Uij" secondAttribute="centerX" id="BEL-pm-zl8"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leading" id="CYy-zG-MpA"/>
+                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="centerX" secondItem="Tfd-Qc-Uij" secondAttribute="centerX" id="EEj-Vo-oNF"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="bottom" secondItem="Tfd-Qc-Uij" secondAttribute="top" id="OhE-3D-htE"/>
+                            <constraint firstItem="Zmr-n8-Mfy" firstAttribute="top" secondItem="Kqd-a5-OYa" secondAttribute="bottom" constant="8" symbolic="YES" id="XZ0-Dv-KJh"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="bottom" secondItem="oFn-en-O1v" secondAttribute="top" id="dvc-PX-w97"/>
+                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="top" secondItem="DKK-EW-P1B" secondAttribute="bottom" constant="8" symbolic="YES" id="gKo-4p-zqB"/>
+                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leadingMargin" constant="-7" id="gL2-dv-BfD"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="trailing" secondItem="Tfd-Qc-Uij" secondAttribute="trailing" id="i0r-Eh-13m"/>
+                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="centerX" secondItem="b6t-4S-kjd" secondAttribute="centerX" id="l1v-1l-XXj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zmr-n8-Mfy" secondAttribute="trailing" constant="-25" id="mF8-IW-pR0"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="top" secondItem="Zmr-n8-Mfy" secondAttribute="top" id="q5n-gk-0fu"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="CET-nN-hqp"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="rxh-N1-4DX" id="EEK-os-cig"/>
+                        <outlet property="errorLabel" destination="Zmr-n8-Mfy" id="5Wg-ET-9ZR"/>
+                        <outlet property="searchField" destination="Kqd-a5-OYa" id="uez-IV-gy4"/>
+                        <outlet property="tableView" destination="9V4-Ya-Ce1" id="Q3i-BF-EsX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iIT-oH-W0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="1201"/>
+        </scene>
     </scenes>
     <resources>
         <image name="link" width="25" height="25"/>
         <image name="reddit-tab-bar" width="25" height="25"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <inferredMetricsTieBreakers>
+        <segue reference="KMe-AG-52r"/>
+    </inferredMetricsTieBreakers>
 </document>
