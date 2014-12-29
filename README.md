@@ -4,6 +4,15 @@ This is a simple Reddit Client for iOS written in Objective C.
 
 ![](https://raw.githubusercontent.com/caseyscarborough/RedditClient/master/RedditClient/RedditClient.png)
 
+## Features
+
+- [x] View Frontpage Posts
+- [x] View Post Link
+- [x] View Post Comments
+- [x] Subreddit Search
+- [x] Infinite Scrolling and Pull to Refresh
+- [ ] ???
+
 ## Usage
 
 Ensure that you have [CocoaPods](http://cocoapods.org/) installed and clone the repository. Then issue the following commands from the root of the project:
