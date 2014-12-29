@@ -43,7 +43,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="skf-nP-Aaq" kind="show" id="8J2-qc-pGe"/>
+                                            <segue destination="skf-nP-Aaq" kind="show" identifier="showLink" id="8J2-qc-pGe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="505"/>
         </scene>
-        <!--Item 2-->
+        <!--Comments-->
         <scene sceneID="MO5-oY-XJz">
             <objects>
                 <viewController id="uet-Q0-gh2" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="reddit-tab-bar" id="NoP-b0-zTi"/>
+                    <tabBarItem key="tabBarItem" title="Comments" image="reddit-tab-bar" id="NoP-b0-zTi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pS7-vU-spA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +95,7 @@
         <!--Link-->
         <scene sceneID="trd-ll-rca">
             <objects>
-                <viewController id="EZB-fu-fL0" sceneMemberID="viewController">
+                <viewController id="EZB-fu-fL0" customClass="PostWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tbV-6g-Oso"/>
                         <viewControllerLayoutGuide type="bottom" id="DKa-0c-tsx"/>
@@ -103,18 +103,33 @@
                     <view key="view" contentMode="scaleToFill" id="Oex-0K-lll">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7i-uW-YGt">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B7i-uW-YGt" firstAttribute="leading" secondItem="Oex-0K-lll" secondAttribute="leading" id="2UA-K5-2oD"/>
+                            <constraint firstItem="B7i-uW-YGt" firstAttribute="top" secondItem="tbV-6g-Oso" secondAttribute="bottom" id="Fr5-UF-UIm"/>
+                            <constraint firstAttribute="trailing" secondItem="B7i-uW-YGt" secondAttribute="trailing" id="H2i-8k-a68"/>
+                            <constraint firstAttribute="bottom" secondItem="B7i-uW-YGt" secondAttribute="bottom" id="T9D-7R-mpM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Link" image="link" id="Zhy-9I-8Fp"/>
+                    <connections>
+                        <outlet property="webView" destination="B7i-uW-YGt" id="w01-1E-Xyf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da8-oH-cfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3144" y="174"/>
+            <point key="canvasLocation" x="3144" y="190"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Post Tab Bar View Controller-->
         <scene sceneID="JPn-Li-9iy">
             <objects>
-                <tabBarController id="skf-nP-Aaq" sceneMemberID="viewController">
+                <tabBarController id="skf-nP-Aaq" customClass="PostTabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eXN-xt-wY0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -153,4 +168,5 @@
         <image name="link" width="25" height="25"/>
         <image name="reddit-tab-bar" width="25" height="25"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

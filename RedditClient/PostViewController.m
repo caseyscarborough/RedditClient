@@ -20,11 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"Front Page";
-    // Reddit navbar color
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(82/255.0) green:(138/255.0) blue:(220/255.0) alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(42/255.0) green:(68/255.0) blue:(94/255.0) alpha:1];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+
+    // Set status bar to white text
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.hidden = YES;
     [self.activityIndicator startAnimating];
@@ -53,6 +57,7 @@
             post.thumbnail = jsonData[@"thumbnail"];
             post.upvotes = [jsonData[@"ups"] integerValue];
             post.comments = [jsonData[@"num_comments"] integerValue];
+            post.urlString = jsonData[@"url"];
             [self.posts addObject:post];
         }
         [self.tableView reloadData];
@@ -89,14 +94,16 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showLink"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Post *currentPost = [self.posts objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setCurrentPost:currentPost];
+    }
 }
-*/
 
 @end

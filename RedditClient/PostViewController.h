@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CustomUITableViewCell.h"
 #import "Post.h"
+#import "PostTabBarViewController.h"
 #import "AFNetworking.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
