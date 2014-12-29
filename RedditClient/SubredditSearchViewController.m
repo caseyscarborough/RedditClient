@@ -68,6 +68,9 @@
 }
 
 - (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit {
+    if ([subreddit isEqualToString:@""]) {
+        return;
+    }
     self.activityIndicator.hidden = NO;
     self.tableView.hidden = YES;
     self.errorLabel.hidden = YES;
