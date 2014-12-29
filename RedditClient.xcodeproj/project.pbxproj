@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93ADD9C1A51CFDC00EB7F5C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C93ADD9B1A51CFDC00EB7F5C /* README.md */; };
 		C9A79CEF1A518D6C0091A36B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79CEE1A518D6C0091A36B /* main.m */; };
 		C9A79CF21A518D6C0091A36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79CF11A518D6C0091A36B /* AppDelegate.m */; };
 		C9A79CF81A518D6C0091A36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A79CF61A518D6C0091A36B /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		17366301122A03F2A74C4A68 /* Pods-RedditClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedditClient/Pods-RedditClient.release.xcconfig"; sourceTree = "<group>"; };
 		615DBDA9EC77B117BB5CE2C3 /* Pods-RedditClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedditClient/Pods-RedditClient.debug.xcconfig"; sourceTree = "<group>"; };
+		C93ADD9B1A51CFDC00EB7F5C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C9A79CE91A518D6C0091A36B /* RedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A79CED1A518D6C0091A36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A79CEE1A518D6C0091A36B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		C9A79CE01A518D6C0091A36B = {
 			isa = PBXGroup;
 			children = (
+				C93ADD9B1A51CFDC00EB7F5C /* README.md */,
 				C9A79CEB1A518D6C0091A36B /* RedditClient */,
 				C9A79D051A518D6C0091A36B /* RedditClientTests */,
 				C9A79CEA1A518D6C0091A36B /* Products */,
@@ -309,6 +312,7 @@
 				C9A79CEF1A518D6C0091A36B /* main.m in Sources */,
 				C9A79D141A518F520091A36B /* PostViewController.m in Sources */,
 				C9A79D171A5193850091A36B /* Post.m in Sources */,
+				C93ADD9C1A51CFDC00EB7F5C /* README.md in Sources */,
 				C9A79D201A51ACAF0091A36B /* PostTabBarViewController.m in Sources */,
 				C9A79D1D1A51AA8E0091A36B /* PostWebViewController.m in Sources */,
 			);
