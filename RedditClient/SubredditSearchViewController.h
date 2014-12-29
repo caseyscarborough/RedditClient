@@ -20,4 +20,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSMutableArray *posts;
+@property (strong, nonatomic) NSString *currentSubreddit;
 @end

@@ -22,6 +22,14 @@
     self.searchField.delegate = self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if (self.currentSubreddit != nil) {
+        self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"/r/%@", self.currentSubreddit];
+        return;
+    }
+    self.navigationController.navigationBar.topItem.title = @"Search for Subreddit";
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -70,32 +78,41 @@
     [manager GET: apiEndpoint parameters: nil success: ^(AFHTTPRequestOperation *operation, id responseObject){
         self.posts = [[NSMutableArray alloc] init];
         NSArray *jsonPosts = [((NSDictionary *)[responseObject objectForKey:@"data"]) objectForKey:@"children"];
-        for (NSDictionary *jsonPost in jsonPosts) {
-            NSDictionary *jsonData = jsonPost[@"data"];
-            Post *post = [[Post alloc] init];
-            post.ID = jsonData[@"id"];
-            post.title = [jsonData[@"title"] stringByDecodingHTMLEntities];
-            post.thumbnail = jsonData[@"thumbnail"];
-            post.upvotes = [jsonData[@"ups"] integerValue];
-            post.comments = [jsonData[@"num_comments"] integerValue];
-            post.subreddit = jsonData[@"subreddit"];
-            post.urlString = jsonData[@"url"];
-            post.isSelf = ([jsonData[@"is_self"] integerValue] == 1);
-            post.permalink = jsonData[@"permalink"];
-            if (!([jsonData objectForKey:@"selftext"] == (id)[NSNull null])) {
-                post.selfText = [jsonData objectForKey:@"selftext"];
+        if (jsonPosts.count == 0) {
+            self.errorLabel.text = @"There are no posts in this subreddit.";
+            self.errorLabel.hidden = NO;
+        } else {
+            for (NSDictionary *jsonPost in jsonPosts) {
+                NSDictionary *jsonData = jsonPost[@"data"];
+                Post *post = [[Post alloc] init];
+                post.ID = jsonData[@"id"];
+                post.title = [jsonData[@"title"] stringByDecodingHTMLEntities];
+                post.thumbnail = jsonData[@"thumbnail"];
+                post.upvotes = [jsonData[@"ups"] integerValue];
+                post.comments = [jsonData[@"num_comments"] integerValue];
+                post.subreddit = jsonData[@"subreddit"];
+                post.urlString = jsonData[@"url"];
+                post.isSelf = ([jsonData[@"is_self"] integerValue] == 1);
+                post.permalink = jsonData[@"permalink"];
+                if (!([jsonData objectForKey:@"selftext"] == (id)[NSNull null])) {
+                    post.selfText = [jsonData objectForKey:@"selftext"];
+                }
+                [self.posts addObject:post];
             }
-            [self.posts addObject:post];
+            self.tableView.hidden = NO;
+            [self.tableView reloadData];
         }
-        [self.tableView reloadData];
         self.activityIndicator.hidden = YES;
-        self.tableView.hidden = NO;
+        self.currentSubreddit = subreddit;
+        self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"/r/%@", subreddit];
     } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         self.tableView.hidden = YES;
         self.activityIndicator.hidden = YES;
         self.errorLabel.text = @"Could not find that subreddit. Please try again.";
         self.errorLabel.hidden = NO;
+        self.currentSubreddit = nil;
+        self.navigationController.navigationBar.topItem.title = @"";
     }];
 }
 

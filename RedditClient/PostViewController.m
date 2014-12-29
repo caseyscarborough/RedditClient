@@ -26,7 +26,6 @@
     refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(retrieveFrontPagePosts:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
-    self.title = @"Front Page";
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:(42/255.0) green:(68/255.0) blue:(94/255.0) alpha:1];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
@@ -44,6 +43,11 @@
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
     [self retrieveFrontPagePosts:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBar.topItem.title = @"Front Page";
+
 }
 
 - (void)didReceiveMemoryWarning {
