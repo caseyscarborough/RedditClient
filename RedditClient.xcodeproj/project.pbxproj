@@ -14,6 +14,7 @@
 		C9A79CFD1A518D6C0091A36B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A79CFB1A518D6C0091A36B /* LaunchScreen.xib */; };
 		C9A79D091A518D6C0091A36B /* RedditClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D081A518D6C0091A36B /* RedditClientTests.m */; };
 		C9A79D141A518F520091A36B /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D131A518F520091A36B /* PostViewController.m */; };
+		C9A79D171A5193850091A36B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D161A5193850091A36B /* Post.m */; };
 		FB0103BDCD0D667EBC9B3D6A /* libPods-RedditClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		C9A79D081A518D6C0091A36B /* RedditClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedditClientTests.m; sourceTree = "<group>"; };
 		C9A79D121A518F520091A36B /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		C9A79D131A518F520091A36B /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		C9A79D151A5193850091A36B /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		C9A79D161A5193850091A36B /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RedditClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +116,8 @@
 				C9A79CEC1A518D6C0091A36B /* Supporting Files */,
 				C9A79D121A518F520091A36B /* PostViewController.h */,
 				C9A79D131A518F520091A36B /* PostViewController.m */,
+				C9A79D151A5193850091A36B /* Post.h */,
+				C9A79D161A5193850091A36B /* Post.m */,
 			);
 			path = RedditClient;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				C9A79CF21A518D6C0091A36B /* AppDelegate.m in Sources */,
 				C9A79CEF1A518D6C0091A36B /* main.m in Sources */,
 				C9A79D141A518F520091A36B /* PostViewController.m in Sources */,
+				C9A79D171A5193850091A36B /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

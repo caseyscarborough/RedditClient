@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+#import "AFNetworking.h"
 
 @interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) NSMutableArray *posts;
 @end
