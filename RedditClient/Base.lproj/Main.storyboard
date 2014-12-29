@@ -88,16 +88,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKV-Av-Xex">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="VKV-Av-Xex" secondAttribute="trailing" id="4O4-OL-H7a"/>
-                            <constraint firstItem="VKV-Av-Xex" firstAttribute="top" secondItem="vgP-sX-WCa" secondAttribute="bottom" id="4gP-AE-uMp"/>
-                            <constraint firstItem="VKV-Av-Xex" firstAttribute="leading" secondItem="XOA-c5-1Hf" secondAttribute="leading" id="8D4-Y9-h1g"/>
-                            <constraint firstAttribute="bottom" secondItem="VKV-Av-Xex" secondAttribute="bottom" id="j0g-gq-mz2"/>
+                            <constraint firstItem="VKV-Av-Xex" firstAttribute="leading" secondItem="XOA-c5-1Hf" secondAttribute="leading" id="FxD-IL-4Nj"/>
+                            <constraint firstItem="VKV-Av-Xex" firstAttribute="bottom" secondItem="N0o-wD-5FY" secondAttribute="top" id="JQ4-ll-EIk"/>
+                            <constraint firstAttribute="trailing" secondItem="VKV-Av-Xex" secondAttribute="trailing" id="KYo-Fg-R20"/>
+                            <constraint firstItem="VKV-Av-Xex" firstAttribute="top" secondItem="vgP-sX-WCa" secondAttribute="bottom" id="zfh-3P-sHX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comments" image="reddit-tab-bar" id="NoP-b0-zTi"/>
@@ -122,16 +122,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7i-uW-YGt">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B7i-uW-YGt" firstAttribute="leading" secondItem="Oex-0K-lll" secondAttribute="leading" id="2UA-K5-2oD"/>
-                            <constraint firstItem="B7i-uW-YGt" firstAttribute="top" secondItem="tbV-6g-Oso" secondAttribute="bottom" id="Fr5-UF-UIm"/>
-                            <constraint firstAttribute="trailing" secondItem="B7i-uW-YGt" secondAttribute="trailing" id="H2i-8k-a68"/>
-                            <constraint firstAttribute="bottom" secondItem="B7i-uW-YGt" secondAttribute="bottom" id="T9D-7R-mpM"/>
+                            <constraint firstItem="B7i-uW-YGt" firstAttribute="bottom" secondItem="DKa-0c-tsx" secondAttribute="top" id="070-LV-67W"/>
+                            <constraint firstItem="B7i-uW-YGt" firstAttribute="leading" secondItem="Oex-0K-lll" secondAttribute="leading" id="CYw-cx-uGM"/>
+                            <constraint firstItem="B7i-uW-YGt" firstAttribute="top" secondItem="tbV-6g-Oso" secondAttribute="bottom" id="CeQ-zj-1Ku"/>
+                            <constraint firstAttribute="trailing" secondItem="B7i-uW-YGt" secondAttribute="trailing" id="ekB-o3-5rK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Link" image="link" id="Zhy-9I-8Fp"/>
@@ -311,6 +311,6 @@
         <image name="reddit-tab-bar" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KMe-AG-52r"/>
+        <segue reference="8J2-qc-pGe"/>
     </inferredMetricsTieBreakers>
 </document>
