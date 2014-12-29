@@ -18,6 +18,7 @@
 		C9A79D1A1A51A0380091A36B /* CustomUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D191A51A0380091A36B /* CustomUITableViewCell.m */; };
 		C9A79D1D1A51AA8E0091A36B /* PostWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */; };
 		C9A79D201A51ACAF0091A36B /* PostTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */; };
+		C9D19BCA1A51BC5900365F61 /* PostCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */; };
 		FB0103BDCD0D667EBC9B3D6A /* libPods-RedditClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostWebViewController.m; sourceTree = "<group>"; };
 		C9A79D1E1A51ACAF0091A36B /* PostTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTabBarViewController.h; sourceTree = "<group>"; };
 		C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTabBarViewController.m; sourceTree = "<group>"; };
+		C9D19BC81A51BC5900365F61 /* PostCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCommentsViewController.h; sourceTree = "<group>"; };
+		C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCommentsViewController.m; sourceTree = "<group>"; };
 		E47E997BFD7C0DC4AD2474DC /* libPods-RedditClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RedditClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +136,8 @@
 				C9A79D1C1A51AA8E0091A36B /* PostWebViewController.m */,
 				C9A79D1E1A51ACAF0091A36B /* PostTabBarViewController.h */,
 				C9A79D1F1A51ACAF0091A36B /* PostTabBarViewController.m */,
+				C9D19BC81A51BC5900365F61 /* PostCommentsViewController.h */,
+				C9D19BC91A51BC5900365F61 /* PostCommentsViewController.m */,
 			);
 			path = RedditClient;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			files = (
 				C9A79CF21A518D6C0091A36B /* AppDelegate.m in Sources */,
 				C9A79D1A1A51A0380091A36B /* CustomUITableViewCell.m in Sources */,
+				C9D19BCA1A51BC5900365F61 /* PostCommentsViewController.m in Sources */,
 				C9A79CEF1A518D6C0091A36B /* main.m in Sources */,
 				C9A79D141A518F520091A36B /* PostViewController.m in Sources */,
 				C9A79D171A5193850091A36B /* Post.m in Sources */,

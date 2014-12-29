@@ -18,6 +18,8 @@
 @property (assign, nonatomic) NSInteger createdUtc;
 @property (assign, nonatomic) NSInteger upvotes;
 @property (assign, nonatomic) NSInteger comments;
+@property (strong, nonatomic) NSString *selfText;
+@property (assign, nonatomic) BOOL isSelf;
 - (NSURL *) url;
 - (NSURL *) permalinkUrl;
 - (NSURL *) thumbnailUrl;

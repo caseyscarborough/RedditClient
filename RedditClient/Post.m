@@ -14,7 +14,8 @@
 }
 
 - (NSURL *)permalinkUrl {
-    return [NSURL URLWithString:self.permalink];
+    NSString *fullPermalink = [NSString stringWithFormat:@"http://reddit.com%@", self.permalink];
+    return [NSURL URLWithString:fullPermalink];
 }
 
 - (NSURL *)thumbnailUrl {

@@ -76,7 +76,7 @@
         <!--Comments-->
         <scene sceneID="MO5-oY-XJz">
             <objects>
-                <viewController id="uet-Q0-gh2" sceneMemberID="viewController">
+                <viewController id="uet-Q0-gh2" customClass="PostCommentsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vgP-sX-WCa"/>
                         <viewControllerLayoutGuide type="bottom" id="N0o-wD-5FY"/>
@@ -84,9 +84,24 @@
                     <view key="view" contentMode="scaleToFill" id="XOA-c5-1Hf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKV-Av-Xex">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VKV-Av-Xex" secondAttribute="trailing" id="4O4-OL-H7a"/>
+                            <constraint firstItem="VKV-Av-Xex" firstAttribute="top" secondItem="vgP-sX-WCa" secondAttribute="bottom" id="4gP-AE-uMp"/>
+                            <constraint firstItem="VKV-Av-Xex" firstAttribute="leading" secondItem="XOA-c5-1Hf" secondAttribute="leading" id="8D4-Y9-h1g"/>
+                            <constraint firstAttribute="bottom" secondItem="VKV-Av-Xex" secondAttribute="bottom" id="j0g-gq-mz2"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comments" image="reddit-tab-bar" id="NoP-b0-zTi"/>
+                    <connections>
+                        <outlet property="webView" destination="VKV-Av-Xex" id="WcV-Xc-dzb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pS7-vU-spA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

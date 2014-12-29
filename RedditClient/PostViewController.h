@@ -11,6 +11,7 @@
 #import "Post.h"
 #import "PostTabBarViewController.h"
 #import "AFNetworking.h"
+#import "NSString+HTML.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface PostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
