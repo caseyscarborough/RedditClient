@@ -21,7 +21,7 @@
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-P5-rdO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="post" textLabel="hta-bm-Eyp" detailTextLabel="vPw-Uk-zUQ" style="IBUITableViewCellStyleSubtitle" id="4DD-MB-Cgd" customClass="CustomUITableViewCell">
@@ -56,12 +56,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="bottom" secondItem="Vfd-Om-0Tb" secondAttribute="top" id="5IV-lo-5D7"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="leading" secondItem="1tG-Tw-HgB" secondAttribute="leading" id="8a9-M5-f2X"/>
                             <constraint firstItem="XBi-AB-WQR" firstAttribute="centerX" secondItem="1tG-Tw-HgB" secondAttribute="centerX" id="D1G-Yf-hsS"/>
                             <constraint firstItem="XBi-AB-WQR" firstAttribute="centerY" secondItem="1tG-Tw-HgB" secondAttribute="centerY" id="WjP-lz-zUw"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerX" secondItem="XBi-AB-WQR" secondAttribute="centerX" id="ZGR-My-0ka"/>
-                            <constraint firstItem="ifm-P5-rdO" firstAttribute="top" secondItem="1tG-Tw-HgB" secondAttribute="top" id="mQa-h9-yaF"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="leading" secondItem="1tG-Tw-HgB" secondAttribute="leading" id="Xmb-7b-cUy"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerX" secondItem="XBi-AB-WQR" secondAttribute="centerX" id="bED-Io-ESK"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="centerY" secondItem="XBi-AB-WQR" secondAttribute="centerY" id="bTq-sL-XLT"/>
+                            <constraint firstItem="ifm-P5-rdO" firstAttribute="top" secondItem="1tG-Tw-HgB" secondAttribute="top" id="ygT-gN-qPY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Front Page" image="reddit-tab-bar" id="U58-CV-5w5"/>
@@ -212,13 +212,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfd-Qc-Uij">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Item" id="Pac-IX-DRP"/>
-                                </items>
-                            </tabBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter subreddit... i.e. funny, aww, jokes" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Kqd-a5-OYa">
                                 <rect key="frame" x="9" y="72" width="582" height="30"/>
                                 <constraints>
@@ -241,7 +234,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9V4-Ya-Ce1">
-                                <rect key="frame" x="0.0" y="110" width="600" height="441"/>
+                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subredditPostCell" textLabel="6bL-1m-QGg" detailTextLabel="Hiz-Zn-cnK" style="IBUITableViewCellStyleSubtitle" id="Xk3-sS-0IP" customClass="CustomUITableViewCell">
@@ -276,21 +269,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="Tfd-Qc-Uij" secondAttribute="leading" id="2hi-zz-Nv5"/>
                             <constraint firstItem="rxh-N1-4DX" firstAttribute="centerY" secondItem="b6t-4S-kjd" secondAttribute="centerY" id="9dk-6e-eIt"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="leading" secondItem="Zmr-n8-Mfy" secondAttribute="leading" id="Ac3-XB-vAX"/>
-                            <constraint firstItem="rxh-N1-4DX" firstAttribute="centerX" secondItem="Tfd-Qc-Uij" secondAttribute="centerX" id="BEL-pm-zl8"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leading" id="CYy-zG-MpA"/>
-                            <constraint firstItem="Kqd-a5-OYa" firstAttribute="centerX" secondItem="Tfd-Qc-Uij" secondAttribute="centerX" id="EEj-Vo-oNF"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="bottom" secondItem="Tfd-Qc-Uij" secondAttribute="top" id="OhE-3D-htE"/>
+                            <constraint firstAttribute="bottom" secondItem="9V4-Ya-Ce1" secondAttribute="bottom" id="CU7-my-aZ3"/>
                             <constraint firstItem="Zmr-n8-Mfy" firstAttribute="top" secondItem="Kqd-a5-OYa" secondAttribute="bottom" constant="8" symbolic="YES" id="XZ0-Dv-KJh"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="bottom" secondItem="oFn-en-O1v" secondAttribute="top" id="dvc-PX-w97"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="centerX" secondItem="Kqd-a5-OYa" secondAttribute="centerX" id="fTl-en-E0p"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="top" secondItem="DKK-EW-P1B" secondAttribute="bottom" constant="8" symbolic="YES" id="gKo-4p-zqB"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leadingMargin" constant="-7" id="gL2-dv-BfD"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="trailing" secondItem="Tfd-Qc-Uij" secondAttribute="trailing" id="i0r-Eh-13m"/>
                             <constraint firstItem="Kqd-a5-OYa" firstAttribute="centerX" secondItem="b6t-4S-kjd" secondAttribute="centerX" id="l1v-1l-XXj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zmr-n8-Mfy" secondAttribute="trailing" constant="-25" id="mF8-IW-pR0"/>
-                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="top" secondItem="Zmr-n8-Mfy" secondAttribute="top" id="q5n-gk-0fu"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="centerX" secondItem="rxh-N1-4DX" secondAttribute="centerX" id="o29-B4-5YE"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="leading" secondItem="b6t-4S-kjd" secondAttribute="leading" id="rRR-HW-Z0s"/>
+                            <constraint firstItem="9V4-Ya-Ce1" firstAttribute="top" secondItem="Zmr-n8-Mfy" secondAttribute="top" id="rlY-64-PsM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="CET-nN-hqp"/>

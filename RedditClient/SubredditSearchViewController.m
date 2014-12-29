@@ -11,6 +11,7 @@
 @interface SubredditSearchViewController () {
 }
 - (void)retrieveSubredditPosts:(id)sender forSubreddit:(NSString *)subreddit;
+@property (nonatomic) CGRect originalFrame;
 @end
 
 @implementation SubredditSearchViewController
@@ -20,6 +21,9 @@
     self.tableView.hidden = YES;
     self.activityIndicator.hidden = YES;
     self.searchField.delegate = self;
+    self.originalFrame = self.tabBarController.tabBar.frame;
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -36,6 +40,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.posts.count;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    UITabBar *tb = self.tabBarController.tabBar;
+    NSInteger yOffset = scrollView.contentOffset.y;
+    if (yOffset > 0) {
+        tb.frame = CGRectMake(tb.frame.origin.x, self.originalFrame.origin.y + yOffset, tb.frame.size.width, tb.frame.size.height);
+    }
+    if (yOffset < 1) tb.frame = self.originalFrame;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

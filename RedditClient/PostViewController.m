@@ -11,8 +11,8 @@
 @interface PostViewController () {
     UIRefreshControl *refreshControl;
 }
-
 - (void)retrieveFrontPagePosts:(id)sender;
+@property (nonatomic) CGRect originalFrame;
 @end
 
 @implementation PostViewController
@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(retrieveFrontPagePosts:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
@@ -40,14 +41,25 @@
     
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     self.tableView.hidden = YES;
+    
+
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
     [self retrieveFrontPagePosts:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    self.originalFrame = self.tabBarController.tabBar.frame;
     self.navigationController.navigationBar.topItem.title = @"Front Page";
+}
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    UITabBar *tb = self.tabBarController.tabBar;
+    NSInteger yOffset = scrollView.contentOffset.y;
+    if (yOffset > 0) {
+        tb.frame = CGRectMake(tb.frame.origin.x, self.originalFrame.origin.y + yOffset, tb.frame.size.width, tb.frame.size.height);
+    }
+    if (yOffset < 1) tb.frame = self.originalFrame;
 }
 
 - (void)didReceiveMemoryWarning {
